@@ -13,7 +13,8 @@
             <ul class="navbar-nav mr-auto">
               <li ><a href="/" class="nav-link">Home</a></li>
               <li ><a href="/about" class="nav-link">About</a></li>
-              <li ><a href="products-products" class="nav-link">Products</a></li>
+              <li ><a href="admin-products" class="nav-link">Products</a></li>
+              <li ><a href="admin" class="nav-link">Users</a></li>
             </ul>
                 
 

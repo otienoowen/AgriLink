@@ -34,7 +34,7 @@
 </head>
 <body>
     <div id="app">
-        
+        @include('inc.adminnavbar')
 
         <main class="py-4">
             @yield('content')

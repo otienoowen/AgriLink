@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layout')
 
 @section('content')
 <div class="container">
@@ -16,11 +16,10 @@
 
                     {{ __('You are logged in!') }}
                             <hr>
-                    <a href="/posts/create" class="btn btn-primary">Create Posts</a>
-                    <h3>Your blog posts</h3>
 
-                    <p>{{Auth::user()->name}}</p>
-                    <p></p>
+                    <p>Name: {{Auth::user()->name}}</p>
+                    <p>Email: {{Auth::user()->email}}</p>
+                    <p>User Type: {{Auth::user()->user_type}}</p>
 
                 </div>
             </div>
