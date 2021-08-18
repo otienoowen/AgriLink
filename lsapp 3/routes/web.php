@@ -40,6 +40,11 @@ Route::get('edit-product/{id}', 'AdminController@products_edit');
 Route::put('update-product/{id}', 'AdminController@products_update');
 Route::delete('delete-product/{id}', 'AdminController@products_destroy');
 
+//PRODUCT CRUD
+Route::get('products-products', 'ProductsController@index');
+Route::get('add-product', 'ProductsController@create');
+Route::post('add-product', 'ProductsController@store');
+
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
