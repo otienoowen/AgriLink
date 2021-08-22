@@ -16,19 +16,18 @@
 
                     {{ __('You are logged in!') }}
                             <hr>
-                    {{-- <a href="/posts/create" class="btn btn-primary">Create Posts</a>
-                    <h3>Your blog posts</h3> --}}
+                    
                     <div>
                         <img src= "{{ asset('uploads/admin/'.Auth::user()->profile_image) }}" width="100px" height="100px" alt="Image">
                     </div>
                     <p>Name: {{Auth::user()->name}}</p>
                     <p>Email: {{Auth::user()->email}}</p>
-                    <p>User role: {{Auth::user()->user_type}}</p>
+                    <p>User role: {{Auth::user()->role}}</p>
 
                     
                     
 
-                    {{-- <p><img src="{{ asset('uploads/admin/'.$item->profile_image) }}" width="70px" height="70px" alt="Image"></p> --}}
+
 
                 </div>
             </div>

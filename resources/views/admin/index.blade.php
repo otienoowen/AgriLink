@@ -29,7 +29,7 @@
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->email}}</td>
-                                <td>{{$item->user_type}}</td>
+                                <td>{{$item->role}}</td>
                                 <td>
                                     <img src="{{ asset('uploads/admin/'.$item->profile_image) }}" width="70px" height="70px" alt="Image">
                                 </td>
@@ -95,7 +95,7 @@
                                         <td>{{$item->id}}</td>
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->email}}</td>
-                                        <td>{{$item->user_type}}</td>
+                                        <td>{{$item->role}}</td>
                                         <td>
                                             <img src="{{ asset('uploads/admin/'.$item->profile_image) }}" width="70px" height="70px" alt="Image">
                                         </td>
