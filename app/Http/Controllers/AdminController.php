@@ -36,7 +36,7 @@ class AdminController extends Controller
         $admin->name= $request->input('name');
         $admin->email= $request->input('email');
         $admin->password= Hash::make($request->input('password'));
-        $admin->user_type= $request->input('user_type');
+        $admin->role= $request->input('role');
 
         if($request->hasfile('profile_image')){
             $file= $request->file('profile_image');
@@ -60,7 +60,7 @@ class AdminController extends Controller
         $admin= User::find($id);
         $admin->name= $request->input('name');
         $admin->email= $request->input('email');
-        $admin->user_type= $request->input('user_type');
+        $admin->role= $request->input('role');
 
         if($request->hasfile('profile_image')){
             $destination= 'uploads/admin'.$admin->profile_image;
