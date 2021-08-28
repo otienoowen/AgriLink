@@ -4,16 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Admin;
+use App\Http\Controllers\Auth;
 use App\Models\User;
 
 
 class ProductsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        $admin= User::orderBy('id', 'asc')->paginate(3);
-        return view('admin.index', compact('admin'));
+        $product= User::orderBy('id', 'asc')->paginate(3);
+        return view('product.index', compact('product'));
     }
 
     public function create(){
@@ -30,75 +35,80 @@ class ProductsController extends Controller
         //     //'password' => ['required', 'string', 'min:8', 'confirmed'],
         
         // ]);
-        $admin= new User;
-        $admin->name= $request->input('name');
-        $admin->email= $request->input('email');
-        $admin->password= Hash::make($request->input('password'));
-        $admin->role= $request->input('role');
+        $product= new User;
+        $product->name= $request->input('name');
+        $product->email= $request->input('email');
+        $product->password= Hash::make($request->input('password'));
+        $product->role= $request->input('role');
 
         if($request->hasfile('profile_image')){
             $file= $request->file('profile_image');
             $extension= $file->getClientOriginalExtension();
             $filename= time().'.'.$extension;
-            $file->move('uploads/admin/', $filename);
-            $admin->profile_image = $filename;
+            $file->move('uploads/product/', $filename);
+            $product->profile_image = $filename;
        }
         
-        $admin->save();
+        $product->save();
         return redirect()->back()->with('status', 'User Added Succesfully');
     
     }
 
     public function edit($id){
-        $admin = User::find($id);
-        return view('admin.edit', compact('admin'));
+        $product = User::find($id);
+        return view('product.edit', compact('product'));
     }
 
     public function update(Request $request, $id){
-        $admin= User::find($id);
-        $admin->name= $request->input('name');
-        $admin->email= $request->input('email');
-        $admin->role= $request->input('role');
+        $product= User::find($id);
+        $product->name= $request->input('name');
+        $product->email= $request->input('email');
+        $product->role= $request->input('role');
 
         if($request->hasfile('profile_image')){
-            $destination= 'uploads/admin'.$admin->profile_image;
+            $destination= 'uploads/product'.$product->profile_image;
             if(File::exists($destination)){
                 File::delete($destination);
             }
             $file= $request->file('profile_image');
             $extension= $file->getClientOriginalExtension();
             $filename= time().'.'.$extension;
-            $file->move('uploads/admin/', $filename);
-            $admin->profile_image = $filename;
+            $file->move('uploads/product/', $filename);
+            $product->profile_image = $filename;
        }
         
-        $admin->update();
+        $product->update();
         return redirect()->back()->with('status', 'User Updated Succesfully');
     }
 
     public function destroy($id){
-        $admin= User::find($id);
-        $destination= 'uploads/admin'.$admin->profile_image;
+        $product= User::find($id);
+        $destination= 'uploads/product'.$product->profile_image;
         if(File::exists($destination)){
             File::delete($destination);
         }
 
-        $admin->delete();
+        $product->delete();
         return redirect()->back()->with('status', 'User Deleted Succesfully');
     }
 
 
     //PRODUCTS CRUD
+    public function market_index()
+    {
+        $product=Product::all();
+        return view('market.market-product', compact('product'));
+    }
     public function products_index()
     {
-        $admin=Product::all();
-        return view('admin.products_index', compact('admin'));
+        $product=Product::all();
+        return view('farmer.farmer-product', compact('product'));
     }
 
     public function products_create()
     {
-        $admin=Product::all();
-        return view('farmer.add');
+        $product=Product::all();
+        return view('farmer.add', compact('product'));
     }
 
     public function products_store(Request $request){
@@ -129,17 +139,17 @@ class ProductsController extends Controller
     }
 
     public function products_edit($id){
-        $admin = Product::find($id);
-        return view('admin.products_edit', compact('admin'));
+        $product = Product::find($id);
+        return view('farmer.farmer-edit', compact('product'));
     }
 
     public function products_update(Request $request, $id){
-        $admin= Product::find($id);
-        $admin->name= $request->input('name');
-        $admin->price= $request->input('price');
+        $product= Product::find($id);
+        $product->name= $request->input('name');
+        $product->price= $request->input('price');
 
         if($request->hasfile('image')){
-            $destination= 'uploads/products/'.$admin->image;
+            $destination= 'uploads/products/'.$product->image;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -147,22 +157,22 @@ class ProductsController extends Controller
             $extension= $file->getClientOriginalExtension();
             $filename= time().'.'.$extension;
             $file->move('uploads/products/', $filename);
-            $admin->image = $filename;
+            $product->image = $filename;
        }
         
-        $admin->update();
+        $product->update();
         return redirect()->back()->with('status', 'Product Updated Succesfully');
     }
 
     public function products_destroy($id){
-        $admin= Product::find($id);
-        $destination= 'uploads/products'.$admin->profile_image;
+        $product= Product::find($id);
+        $destination= 'uploads/products'.$product->profile_image;
         if(File::exists($destination))
         {
             File::delete($destination);
         }
 
-        $admin->delete();
+        $product->delete();
         return redirect()->back()->with('status', 'User image deleted succesfully');
     }
 

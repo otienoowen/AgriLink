@@ -4,14 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth;
 use App\Models\Admin;
 use App\Models\User;
 use App\Models\Product;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\File;
 
+
+
 class AdminController extends Controller
 {
+
+     
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $admin= User::orderBy('id', 'asc')->paginate(3);

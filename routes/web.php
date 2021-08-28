@@ -42,12 +42,18 @@ Route::delete('delete-product/{id}', 'AdminController@products_destroy');
 
 
 //FARMER CRUD
-Route::get('farmer_profile', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('farmer_profile', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('farmer-add', 'ProductsController@products_create');
-Route::get('farmer-edi', 'AdminController@products_');
 Route::post('farmer-add', 'ProductsController@products_store');
+Route::get('farmer-product', 'ProductsController@products_index');
+
+Route::get('farmer-edit/{id}', 'ProductsController@products_edit');
 Route::get('edit-product/{id}', 'AdminController@products_edit');
 Route::put('update-product/{id}', 'AdminController@products_update');
+
+//MARKET CRUD
+Route::get('market-profile', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('market-product', 'ProductsController@market_index');
 
 
 
@@ -67,6 +73,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('role:farmer');
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('role:market');
 
-//Route::get('/admin_dashboard', 'Admin\DashboardController@index')->middleware('role:admin');
+//Route::get('/admin', 'Admin\HomeController@index')->middleware('role:admin');
 //Route::get('/seller_dashboard', 'Seller\DashboardController@index')->middleware('role:seller');
 

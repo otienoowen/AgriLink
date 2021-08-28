@@ -84,7 +84,6 @@
                                         <th>Email</th>
                                         <th>User Type</th>
                                         <th>Image</th>
-                                        <th>Status</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
@@ -101,8 +100,6 @@
                                         </td>
                                         <td>
                                             
-                                        </td>
-                                        <td>
                                             <a href="{{ url('edit-user/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                         </td>
                                         <td>

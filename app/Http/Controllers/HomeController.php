@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+  
+use App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,34 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // if(auth()->user()->role == 'admin')
+        // {
+        //     return redirect('/admin');
+        // }
+            $role = auth()->user()->role; 
+            switch ($role) {
+              case 'admin':
+                return redirect('admin');
+                break;
+              case 'farmer':
+                return redirect('farmer_add');
+                break; 
+    
+              case 'market':
+                return redirect('market-product');
+                break; 
+          
+              default:
+                return '/home'; 
+              break;
+            }
+
         return view('home');
+
+        
+
+       
+                
+              
     }
 }

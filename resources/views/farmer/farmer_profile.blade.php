@@ -5,7 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">
+                    <h4>Farmers Dashboard
+                        <a href="{{url('farmer-add')}}" class="btn btn-primary float-right">Add products</a>
+                    </h4> 
+                </div> 
 
                 <div class="card-body">
                     @if (session('status'))
@@ -22,11 +26,10 @@
                     </div>
                     <p>Name: {{Auth::user()->name}}</p>
                     <p>Email: {{Auth::user()->email}}</p>
-                    <p>User role: {{Auth::user()->role}}</p>  
+                    <p>User role: {{Auth::user()->role}}</p>
                     
-                    <td>
-                        <a href="{{ url('edit-user/'.Auth::user()->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                    </td>
+                    <a href="{{ url('edit-user/'.Auth::user()->id) }}" class="btn btn-primary btn-sm">Edit</a>
+
                 </div>
             </div>
         </div>
