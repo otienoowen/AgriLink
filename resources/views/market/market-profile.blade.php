@@ -22,11 +22,7 @@
                     </div>
                     <p>Name: {{Auth::user()->name}}</p>
                     <p>Email: {{Auth::user()->email}}</p>
-                    <p>User role: {{Auth::user()->role}}</p>  
-                    
-                    <td>
-                        <a href="{{ url('edit-user/'.Auth::user()->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                    </td>
+                    <p>User role: {{Auth::user()->role}}</p>               
                 </div>
             </div>
         </div>

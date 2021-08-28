@@ -69,12 +69,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="user_type" class="col-md-4 col-form-label text-md-right">User Type</label>
+                            <label for="role" class="col-md-4 col-form-label text-md-right">User Type</label>
 
                             <div class="col-md-6">
-                                <input id="user_type" type="string" class="form-control @error('user_type') is-invalid @enderror" name="user_type" value="" required autocomplete="user_type">
+                                <input id="role" type="string" class="form-control @error('role') is-invalid @enderror" name="role" value="" required autocomplete="role">
 
-                                @error('user_type')
+                                @error('role')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

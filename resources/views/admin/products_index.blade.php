@@ -11,7 +11,7 @@
                     </h4> 
                 </div> 
                 <div class="card-body">
-                    <table class="table table-bordered table-striped">
+                    <table id="table2" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -35,7 +35,7 @@
                                     <a href="{{ url('edit-product/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                 </td>
                                 <td>
-                                    {{-- <a href="{{url('delete-user/'.$item->id)}}" class="btn btn-danger btn-sm" >Delete</a> --}}
+                                    
                                     <form name="form1" action="{{url('delete-product/'.$item->id)}}" method="POST" >
                                         @csrf
                                         @method('DELETE')
@@ -52,5 +52,18 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready( function () {
+    $('#table2').DataTable(
+        {
+            "pageLength": 3,
+            lengthMenu: [
+                            [ 3, 5, 10, 25, 50, -1 ],
+                            [ '3','5','10', '25', '50', 'All' ]
+                         ]                   
+        }
+    );
+    } );
+</script>
 
 @endsection

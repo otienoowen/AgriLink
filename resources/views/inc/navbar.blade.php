@@ -13,7 +13,7 @@
             <ul class="navbar-nav mr-auto">
               <li ><a href="/" class="nav-link">Home</a></li>
               <li ><a href="/about" class="nav-link">About</a></li>
-              <li ><a href="#" class="nav-link">Products</a></li>
+              <li ><a href="/market-product" class="nav-link">Products</a></li>
               <li ><a href="#" class="nav-link">Pricing</a></li>
             </ul>
                 

@@ -9,20 +9,22 @@
             @endif
             <div class="card">
                 <div class="card-header">
-                    <h4>Edit user with IMAGE
-                        <a href="{{url('admin')}}" class="btn btn-danger float-right">BACK</a>
+                    <h4>Edit product with IMAGE
+                        <a href="{{url('farmer-product')}}" class="btn btn-danger float-right">BACK</a>
                     </h4> 
                 </div> 
                 <div class="card-body">
-                    <form action="{{url ('update-user/'.$admin->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{url ('update-product/'.$product->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')                        
+                        @method('PUT')
+                       
+                         
                          
                          <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$admin->name}}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$product->name}}" required autocomplete="name" autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -33,47 +35,32 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="price" class="col-md-4 col-form-label text-md-right">Price</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{$admin->email}}" required autocomplete="email">
+                                <input id="price" type="integer" class="form-control @error('price') is-invalid @enderror" name="price" value="{{$product->price}}" required autocomplete="price">
 
-                                @error('email')
+                                @error('price')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="role" class="col-md-4 col-form-label text-md-right">User Type</label>
-
-                            <div class="col-md-6">
-                                <input id="role" type="string" class="form-control @error('role') is-invalid @enderror" name="role" value="{{$admin->role}}" required autocomplete="role">
-
-                                @error('role')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
 
 
                         <div class="form-group row">
                             <label for=""class="col-md-4 col-form-label text-md-right">Image</label>
 
                             <div class="col-md-6">
-                            <input type="file" name="profile_image" class="form-control" required>
-                            <img src="{{ asset('uploads/admin/'.$admin->profile_image) }}" width="70px" height="70px" alt="Image">
+                            <input type="file" name="image" class="form-control" required autocomplete="image">
+                            <img src="{{ asset('uploads/products/'.$product->image) }}" width="70px" height="70px" alt="Image">
                             </div>                            
                          </div> 
 
                          <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary"> Update User </button>
+                                <button type="submit" class="btn btn-primary"> Update Product </button>
                             </div>
                         </div>
                     </form>
