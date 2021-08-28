@@ -17,6 +17,7 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js">
     </script>
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    
     <script type="text/javascript">
         <!--
         function confirmation(){
@@ -37,6 +38,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">

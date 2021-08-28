@@ -17,22 +17,7 @@
                     <form action="{{url ('update-product/'.$admin->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                       {{-- <div class="form-group mb-3">
-                           <label for="">Name</label> 
-                           <input type="text" name="name" value="{{$admin->name}}" class="form-control">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="">Email </label>
-                            <input type="text" name="email" value="{{$admin->email}}" class="form-control">
-                         </div>
-                         <div class="form-group mb-3">
-                            <label for="">Profile image</label>
-                            <input type="file" name="profile_image" class="form-control">
-                            <img src="{{ asset('uploads/admin/'.$admin->profile_image) }}" width="70px" height="70px" alt="Image">
-                         </div>
-                         <div class="form-group mb-3">
-                            <button type= submit class="btn btn-primary">Update User</button>
-                        </div> --}}
+                       
                          
                          
                          <div class="form-group row">

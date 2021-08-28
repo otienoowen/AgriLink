@@ -42,9 +42,12 @@ Route::delete('delete-product/{id}', 'AdminController@products_destroy');
 
 
 //FARMER CRUD
-Route::get('products', 'ProductsController@index');
+Route::get('farmer_profile', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('farmer-add', 'ProductsController@products_create');
-
+Route::get('farmer-edi', 'AdminController@products_');
+Route::post('farmer-add', 'ProductsController@products_store');
+Route::get('edit-product/{id}', 'AdminController@products_edit');
+Route::put('update-product/{id}', 'AdminController@products_update');
 
 
 
