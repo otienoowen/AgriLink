@@ -76,3 +76,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Route::get('/admin', 'Admin\HomeController@index')->middleware('role:admin');
 //Route::get('/seller_dashboard', 'Seller\DashboardController@index')->middleware('role:seller');
 
+
+Route::get('/verify', 'Auth\RegisterController@verifyUser')->name('verify.user');

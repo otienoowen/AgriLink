@@ -65,6 +65,7 @@
 
 @extends('layouts.app')
 
+
     @section('content')
         <div class="container">
             <div class="row">
@@ -121,7 +122,8 @@
             </div>
         </div>
         <script>
-            $(document).ready( function () {
+            $.noConflict();
+            jQuery(document).ready( function ($) {
             $('#table_id').DataTable(
                 {
                     "pageLength": 3,

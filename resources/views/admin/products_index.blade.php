@@ -11,7 +11,7 @@
                     </h4> 
                 </div> 
                 <div class="card-body">
-                    <table id="table2" class="table table-bordered table-striped">
+                    <table id="table_id" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -53,8 +53,9 @@
     </div>
 </div>
 <script>
-    $(document).ready( function () {
-    $('#table2').DataTable(
+    $.noConflict();
+    jQuery(document).ready( function ($) {
+    $('#table_id').DataTable(
         {
             "pageLength": 3,
             lengthMenu: [
