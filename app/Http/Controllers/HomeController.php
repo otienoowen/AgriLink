@@ -34,7 +34,7 @@ class HomeController extends Controller
                 return redirect('admin');
                 break;
               case 'farmer':
-                return redirect('farmer_add');
+                return redirect('farmer_profile');
                 break; 
     
               case 'market':

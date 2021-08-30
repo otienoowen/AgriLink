@@ -122,8 +122,8 @@
             </div>
         </div>
         <script>
-            $.noConflict();
-            jQuery(document).ready( function ($) {
+        $.noConflict();
+        jQuery(document).ready( function ($) {
             $('#table_id').DataTable(
                 {
                     "pageLength": 3,

@@ -17,48 +17,31 @@ class ProductsController extends Controller
         $this->middleware('auth');
     }
 
+    //FARMER DASHBOARD
     public function index()
     {
         $product= User::orderBy('id', 'asc')->paginate(3);
-        return view('product.index', compact('product'));
+        return view('farmer.farmer_profile', compact('product'));
     }
 
-    public function create(){
-        return view('farmer.create');
+    //MARKET DASHBOARD
+    public function index2()
+    {
+        $product= User::orderBy('id', 'asc')->paginate(3);
+        return view('market.market-profile', compact('product'));
     }
 
-    public function store(Request $request){
-
         
-
-        // $validated = $request->validate([
-        //     'name' => ['required', 'string', 'max:255'],
-        //     'email' => ['required', 'string', 'email', 'max:255',],
-        //     //'password' => ['required', 'string', 'min:8', 'confirmed'],
-        
-        // ]);
-        $product= new User;
-        $product->name= $request->input('name');
-        $product->email= $request->input('email');
-        $product->password= Hash::make($request->input('password'));
-        $product->role= $request->input('role');
-
-        if($request->hasfile('profile_image')){
-            $file= $request->file('profile_image');
-            $extension= $file->getClientOriginalExtension();
-            $filename= time().'.'.$extension;
-            $file->move('uploads/product/', $filename);
-            $product->profile_image = $filename;
-       }
-        
-        $product->save();
-        return redirect()->back()->with('status', 'User Added Succesfully');
-    
-    }
-
+    //FARMER EDIT PROFILE
     public function edit($id){
         $product = User::find($id);
-        return view('product.edit', compact('product'));
+        return view('farmer.profile-edit', compact('product'));
+    }
+
+    //FARMER EDIT PROFILE
+    public function edit2($id){
+        $product = User::find($id);
+        return view('market.profile-edit', compact('product'));
     }
 
     public function update(Request $request, $id){
@@ -83,6 +66,7 @@ class ProductsController extends Controller
         return redirect()->back()->with('status', 'User Updated Succesfully');
     }
 
+    //DELETE FUNCTION
     public function destroy($id){
         $product= User::find($id);
         $destination= 'uploads/product'.$product->profile_image;
@@ -96,6 +80,9 @@ class ProductsController extends Controller
 
 
     //PRODUCTS CRUD
+    //FARMER DIDPLAY OF PRODUCT
+
+    //DISPLAY MARKET
     public function market_index()
     {
         $product=Product::all();
