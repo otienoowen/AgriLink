@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-header">
                     <h4>Add Product
-                        <a href="{{url('farmer-product')}}" class="btn btn-primary float-right">View Products</a>
+                        <a href="{{url('market-product')}}" class="btn btn-primary float-right">View Products</a>
                     </h4> 
                 </div> 
                 <div class="card-body">
