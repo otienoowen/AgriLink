@@ -56,14 +56,14 @@ Route::get('market-profile', [App\Http\Controllers\HomeController::class, 'index
 Route::get('market-product', 'ProductsController@market_index');
 
 
+Route::get('shopping-cart', 'ProductsController@');
+
+
 
 
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');
-
-
-Route::resource('posts', 'PostsController');
 
 
 Auth::routes();
@@ -78,3 +78,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/verify', 'Auth\RegisterController@verifyUser')->name('verify.user');
+
+Route::get('/add-to-cart/{id}', [
+	'uses' => 'ProductsController@getAddToCart',
+	'as' => 'product.addToCart'
+	]);
+
+Route::get('/shopping-cart', [
+    'uses' => 'ProductsController@getCart',
+    'as' => 'product.shoppingCart'
+    ]);
