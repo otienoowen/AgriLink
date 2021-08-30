@@ -2,13 +2,11 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row ">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Market Dashboard
-                        <a href="{{url('market-product')}}" class="btn btn-primary float-right">View Products</a>
-                    </h4> 
+                    <h4>Market Dashboard</h4> 
                 </div> 
 
                 <div class="card-body">
@@ -20,15 +18,40 @@
 
                     {{ __('You are logged in!') }}
                             <hr>
+
+                            <div class="row">
+	<aside class="col-md-3">
+		<ul class="list-group">
+			<a class="list-group-item active" href="#"> Account Overview  </a>
+			<a class="list-group-item" href="{{ url('profile-edit/'.Auth::user()->id) }}"> Edit Profile </a>
+			<a class="list-group-item" href="{{url('farmer-add')}}"> Add Products </a>
+			<a class="list-group-item" href="#"> View Products </a>
+		</ul>
+	</aside> <!-- col.// -->
+	<main class="col-md-9">
+
+		<article class="card mb-3">
+			<div class="card-body">
+				
+				<figure class="icontext">
+						<div class="icon">
+							<img class="rounded-circle img-sm border" src="{{ asset('uploads/admin/'.Auth::user()->profile_image) }}" width="100px" height="100px">
+						</div>
+						<div class="text">
+							<strong> {{Auth::user()->name}} </strong> 
+				</figure>
+				<hr>
+				<p>
+				<br> 
+					Email: {{Auth::user()->email}} <br>
+					User Type: {{Auth::user()->role}} </br>
+				</p>
+	</main> <!-- col.// -->
+</div>
+
+</div> <!-- container .//  -->
                     
-                    <div>
-                        <img src= "{{ asset('uploads/admin/'.Auth::user()->profile_image) }}" width="100px" height="100px" alt="Image">
-                    </div>
-                    <p>Name: {{Auth::user()->name}}</p>
-                    <p>Email: {{Auth::user()->email}}</p>
-                    <p>User role: {{Auth::user()->role}}</p>
-                    
-                    <a href="{{ url('market-edit/'.Auth::user()->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                   
 
                 </div>
             </div>
@@ -36,5 +59,8 @@
     </div>
 </div>
 
+
+
 @endsection
+
 

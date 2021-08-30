@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.newapp')
 
 @section('content')
 <div class="container">
@@ -35,7 +35,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="weight" class="col-md-4 col-form-label text-md-right">Weight in kgs</label>
+                            <label for="weight" class="col-md-4 col-form-label text-md-right">Weight (Kgs))</label>
 
                             <div class="col-md-6">
                                 <input id="weight" type="integer" class="form-control @error('weight') is-invalid @enderror" name="price" value="{{$product->price}}" required autocomplete="weight">

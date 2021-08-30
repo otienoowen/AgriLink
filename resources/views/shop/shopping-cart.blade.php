@@ -22,10 +22,10 @@
 <tr>
 	<td>
 		<figure class="itemside">
-			<div class="aside"><img src="images/items/2.jpg" class="img-sm"></div>
+			<div class="aside"><img src="{{ asset('uploads/products/'.$item ['item']['image']) }}" class="img-sm"></div>
 			<figcaption class="info">
 				<a href="#" class="title text-dark">{{ $item ['item']['name'] }}</a>
-				<p class="text-muted small">Size: XL, Color: blue, <br> Region: Kiambu </p>
+				<p class="text-muted small">Weight (Kgs): {{ $item ['item']['weight'] }} Kgs<br>  </p>
 			</figcaption>
 		</figure>
 	</td>
@@ -41,7 +41,6 @@
 		</div> <!-- price-wrap .// -->
 	</td>
 	<td class="text-right"> 
-	<a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
 	<a href="" class="btn btn-light btn-round"> Remove</a>
 	</td>
 </tr>
@@ -50,7 +49,7 @@
 </table>
 
 <div class="card-body border-top">
-	<a href="#" class="btn btn-primary float-md-right"> Make Order <i class="fa fa-chevron-right"></i> </a>
+	<a href="/checkout" class="btn btn-primary float-md-right"> Make Order <i class="fa fa-chevron-right"></i> </a>
 	<a href="/market-product" class="btn btn-light"> <i class="fa fa-chevron-left"></i> Continue shopping </a>
 </div>	
 </div> <!-- card.// -->
@@ -101,10 +100,10 @@
 <tr>
 	<td>
 		<figure class="itemside">
-			<div class="aside"><img src="images/items/2.jpg" class="img-sm"></div>
+			<div class="aside"><img src="" class="img-sm"></div>
 			<figcaption class="info">
 				<a href="#" class="title text-dark">Item</a>
-				<p class="text-muted small">Size: XL, Color: blue, <br> Region:  </p>
+				<p class="text-muted small">Weight: <br>  </p>
 			</figcaption>
 		</figure>
 	</td>

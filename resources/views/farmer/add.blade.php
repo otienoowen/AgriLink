@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.newapp')
 
 @section('content')
 <div class="container">
@@ -32,12 +32,26 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="weight" class="col-md-4 col-form-label text-md-right">Weight in kgs</label>
+                            <label for="weight" class="col-md-4 col-form-label text-md-right">Weight (Kgs)</label>
 
                             <div class="col-md-6">
                                 <input id="weight" type="integer" class="form-control @error('weight') is-invalid @enderror" name="weight" value="{{ old('weight') }}" required autocomplete="weight">
 
                                 @error('weight')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="region" class="col-md-4 col-form-label text-md-right">Region </label>
+
+                            <div class="col-md-6">
+                                <input id="region" type="text" class="form-control @error('region') is-invalid @enderror" name="region" value="{{ old('region') }}" required autocomplete="region">
+
+                                @error('region')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
