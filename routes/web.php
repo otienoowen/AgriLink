@@ -42,7 +42,10 @@ Route::delete('delete-product/{id}', 'AdminController@products_destroy');
 
 
 //FARMER CRUD
-Route::get('farmer_profile', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('farmer_profile', 'ProductsController@index');
+Route::get('profile-edit/{id}', 'ProductsController@edit');
+
+//FARMER PRODUCT CRUD
 Route::get('farmer-add', 'ProductsController@products_create');
 Route::post('farmer-add', 'ProductsController@products_store');
 Route::get('farmer-product', 'ProductsController@products_index');
@@ -52,7 +55,7 @@ Route::get('edit-product/{id}', 'AdminController@products_edit');
 Route::put('update-product/{id}', 'AdminController@products_update');
 
 //MARKET CRUD
-Route::get('market-profile', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('market-profile', 'ProductsController@index2');
 Route::get('market-product', 'ProductsController@market_index');
 
 

@@ -55,16 +55,16 @@
 <script>
     $.noConflict();
     jQuery(document).ready( function ($) {
-    $('#table_id').DataTable(
-        {
-            "pageLength": 3,
-            lengthMenu: [
-                            [ 3, 5, 10, 25, 50, -1 ],
-                            [ '3','5','10', '25', '50', 'All' ]
-                         ]                   
-        }
-    );
-    } );
-</script>
+        $('#table_id').DataTable(
+            {
+                "pageLength": 3,
+                lengthMenu: [
+                                [ 3, 5, 10, 25, 50, -1 ],
+                                [ '3','5','10', '25', '50', 'All' ]
+                             ]                   
+            }
+        );
+        } );
+    </script>
 
 @endsection
