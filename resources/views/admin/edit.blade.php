@@ -9,7 +9,7 @@
             @endif
             <div class="card">
                 <div class="card-header">
-                    <h4>Edit user with IMAGE
+                    <h4>Edit user 
                         <a href="{{url('admin')}}" class="btn btn-danger float-right">BACK</a>
                     </h4> 
                 </div> 

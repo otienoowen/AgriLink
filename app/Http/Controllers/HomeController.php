@@ -38,7 +38,7 @@ class HomeController extends Controller
                 break; 
     
               case 'market':
-                return redirect('market-product');
+                return redirect('market-profile');
                 break; 
           
               default:

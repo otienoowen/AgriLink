@@ -28,7 +28,7 @@
                     <p>Email: {{Auth::user()->email}}</p>
                     <p>User role: {{Auth::user()->role}}</p>
                     
-                    <a href="{{ url('edit-user/'.Auth::user()->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                    <a href="{{ url('market-edit/'.Auth::user()->id) }}" class="btn btn-primary btn-sm">Edit</a>
 
                 </div>
             </div>
