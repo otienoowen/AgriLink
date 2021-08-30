@@ -11,19 +11,16 @@
 		<header class="card-header">
 			<a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
 				<i class="icon-control fa fa-chevron-down"></i>
-				<h6 class="title">Produce type</h6>
+				<h6 class="title">Produce Available</h6>
 			</a>
 		</header>
 		<div class="filter-content collapse show" id="collapse_1" style="">
+		@foreach($product as $item)
 			<div class="card-body">
-				<form class="pb-3">
-				<div class="input-group">
-				  <input type="text" class="form-control" placeholder="Search">
-				  <div class="input-group-append">
-				    <button class="btn btn-light" type="button"><i class="fa fa-search"></i></button>
-				  </div>
-				</div>
-				</form>
+			<ul class="list-menu">
+				<li><a href="#">{{$item->name}}  </a></li>
+				</ul>
+				
 				
 				<!--<ul class="list-menu">
 				<li><a href="#">People  </a></li>
@@ -36,43 +33,24 @@
 				</ul>-->
 
 			</div> <!-- card-body.// -->
+			@endforeach
 		</div>
 	</article> <!-- filter-group  .// -->
 	<article class="filter-group">
 		<header class="card-header">
 			<a href="#" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" class="">
 				<i class="icon-control fa fa-chevron-down"></i>
-				<h6 class="title">Regions </h6>
+				<h6 class="title">Regions Available</h6>
 			</a>
 		</header>
 		<div class="filter-content collapse show" id="collapse_2" style="">
+		@foreach($product as $item)
 			<div class="card-body">
-				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
-				  <div class="custom-control-label">Kiambu  
-				  	<b class="badge badge-pill badge-light float-right">2</b>  </div>
-				</label>
-				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
-				  <div class="custom-control-label">Trans Nzoia 
-				  	<b class="badge badge-pill badge-light float-right">0</b>  </div>
-				</label>
-				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
-				  <div class="custom-control-label">Kitale 
-				  	<b class="badge badge-pill badge-light float-right">0</b> </div>
-				</label>
-				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
-				  <div class="custom-control-label">Mwea
-				  	<b class="badge badge-pill badge-light float-right">0</b> </div>
-				</label>
-				<label class="custom-control custom-checkbox">
-				  <input type="checkbox" class="custom-control-input">
-				  <div class="custom-control-label">Kisii 
-				  	<b class="badge badge-pill badge-light float-right">0</b>  </div>
-				</label>
+			<ul class="list-menu">
+				<li><a href="#">{{$item->region}}  </a></li>
+				</ul>
 	</div> <!-- card-body.// -->
+	@endforeach
 		</div>
 	</article> <!-- filter-group .// -->
 </div> <!-- card.// -->
@@ -109,8 +87,9 @@
                 <div class="fix-height">
                     <a href="#" class="title">Name:{{$item->name}}</a>
                     <div class="price-wrap mt-2">
-                        <span class="price">Price:Ksh. {{$item->price}}</span>
-                        <!--<span class="weight">Weight: {{$item->weight}}</span>-->
+                        <span class="price">Price: Ksh. {{$item->price}}</span><br>
+						<span class="price">Region: {{$item->region}}</span><br>
+                        <span class="price">Weight: {{$item->weight}} Kgs</span>
                     </div> <!-- price-wrap.// -->
                 </div>
                 <a href="{{ route('product.addToCart', ['id' => $item->id]) }}" class="btn btn-block btn-primary">Add to cart </a>

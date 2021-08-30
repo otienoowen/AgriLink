@@ -123,7 +123,9 @@ class ProductsController extends Controller
         $product= new Product;
         $product->name= $request->input('name');
         $product->weight= $request->input('weight');
+        $product->region= $request->input('region');
         $product->price= $request->input('price');
+        
 
         if($request->hasfile('image')){
             $file= $request->file('image');
@@ -183,7 +185,7 @@ class ProductsController extends Controller
         $cart->add($product, $product->id);
     
         $request->session()->put('cart', $cart); 
-        return redirect()->route('shop.shopping-cart');
+        return redirect()->route('login');
     }
     
     public function getCart(){

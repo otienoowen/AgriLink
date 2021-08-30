@@ -14,7 +14,6 @@
               <li ><a href="/" class="nav-link">Home</a></li>
               <li ><a href="/about" class="nav-link">About</a></li>
               <li ><a href="/market-product" class="nav-link">Products</a></li>
-              <li ><a href="#" class="nav-link">Pricing</a></li>
             </ul>
                 
 
@@ -22,9 +21,9 @@
             <ul class="navbar-nav ml-auto">
             
             <div>
-                <a href="/shopping-cart" class="nav-link"><i class="fa fa-shopping-cart"></i>
-                <span class="badge badge-pill badge-danger notify">{{ Session::has('cart') ? Session::get('cart') -> totalQty : ''}}</span>
-                Shopping Cart</a>
+                <a href="/shopping-cart" class="nav-link"> 
+                <span class="badge badge-pill badge-danger">{{ Session::has('cart') ? Session::get('cart') -> totalQty : ''}}</span>
+                <i class="fa fa-shopping-cart"></i> Shopping Cart</a>
             </div>
                 <!-- Authentication Links -->
                 @guest

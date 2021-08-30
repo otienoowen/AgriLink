@@ -63,8 +63,6 @@ Route::get('market-edit/{id}', 'ProductsController@edit2');
 Route::get('market-product', 'ProductsController@market_index');
 
 
-Route::get('shopping-cart', 'ProductsController@');
-
 
 
 
@@ -94,4 +92,9 @@ Route::get('/add-to-cart/{id}', [
 Route::get('/shopping-cart', [
     'uses' => 'ProductsController@getCart',
     'as' => 'product.shoppingCart'
+    ]);
+
+Route::get('/checkout', [
+    'uses' => 'ProductsController@getCheckout',
+    'as' => 'checkout'
     ]);

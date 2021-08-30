@@ -46,6 +46,20 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="region" class="col-md-4 col-form-label text-md-right">Region </label>
+
+                            <div class="col-md-6">
+                                <input id="region" type="text" class="form-control @error('region') is-invalid @enderror" name="region" value="{{ old('region') }}" required autocomplete="region">
+
+                                @error('region')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="price" class="col-md-4 col-form-label text-md-right">Price</label>
 
                             <div class="col-md-6">
