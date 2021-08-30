@@ -46,16 +46,20 @@ Route::get('farmer_profile', 'ProductsController@index');
 Route::get('profile-edit/{id}', 'ProductsController@edit');
 
 //FARMER PRODUCT CRUD
+//Route::get('farmer-product/{id}', 'ProductsController@products_index');
 Route::get('farmer-add', 'ProductsController@products_create');
 Route::post('farmer-add', 'ProductsController@products_store');
-Route::get('farmer-product', 'ProductsController@products_index');
 
-Route::get('farmer-edit/{id}', 'ProductsController@products_edit');
-Route::get('edit-product/{id}', 'AdminController@products_edit');
-Route::put('update-product/{id}', 'AdminController@products_update');
+
+//Route::get('farmer-edit/{id}', 'ProductsController@products_edit');
+//Route::get('edit-product/{id}', 'AdminController@products_edit');
+//Route::put('update-product/{id}', 'AdminController@products_update');
 
 //MARKET CRUD
 Route::get('market-profile', 'ProductsController@index2');
+Route::get('market-edit/{id}', 'ProductsController@edit2');
+
+//MARKET PRODUCTS DISPLAY
 Route::get('market-product', 'ProductsController@market_index');
 
 

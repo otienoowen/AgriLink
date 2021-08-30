@@ -35,6 +35,21 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="weight" class="col-md-4 col-form-label text-md-right">Weight in kgs</label>
+
+                            <div class="col-md-6">
+                                <input id="weight" type="integer" class="form-control @error('weight') is-invalid @enderror" name="price" value="{{$product->price}}" required autocomplete="weight">
+
+                                @error('weight')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
                             <label for="price" class="col-md-4 col-form-label text-md-right">Price</label>
 
                             <div class="col-md-6">
@@ -47,7 +62,6 @@
                                 @enderror
                             </div>
                         </div>
-
 
                         <div class="form-group row">
                             <label for=""class="col-md-4 col-form-label text-md-right">Image</label>

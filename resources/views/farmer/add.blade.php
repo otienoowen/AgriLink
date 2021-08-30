@@ -9,8 +9,8 @@
             @endif
             <div class="card">
                 <div class="card-header">
-                    <h4>Add product with IMAGE
-                        <a href="{{url('farmer-product')}}" class="btn btn-danger float-right">BACK</a>
+                    <h4>Add Product
+                        <a href="{{url('farmer-product')}}" class="btn btn-primary float-right">View Products</a>
                     </h4> 
                 </div> 
                 <div class="card-body">
@@ -24,6 +24,20 @@
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="weight" class="col-md-4 col-form-label text-md-right">Weight in kgs</label>
+
+                            <div class="col-md-6">
+                                <input id="weight" type="integer" class="form-control @error('weight') is-invalid @enderror" name="weight" value="{{ old('weight') }}" required autocomplete="weight">
+
+                                @error('weight')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

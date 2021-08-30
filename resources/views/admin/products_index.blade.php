@@ -16,6 +16,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Weight in kgs</th>
                                 <th>Price</th>
                                 <th>Image</th>
                                 <th>Edit</th>
@@ -27,6 +28,7 @@
                             <tr>
                                 <td>{{$item->id}}</td>
                                 <td>{{$item->name}}</td>
+                                <td>{{$item->weight}}</td>
                                 <td>{{$item->price}}</td>
                                 <td>
                                     <img src="{{ asset('uploads/products/'.$item->image) }}" width="70px" height="70px" alt="Image">

@@ -38,10 +38,10 @@ class ProductsController extends Controller
         return view('farmer.profile-edit', compact('product'));
     }
 
-    //FARMER EDIT PROFILE
+    //MARKET EDIT PROFILE
     public function edit2($id){
         $product = User::find($id);
-        return view('market.profile-edit', compact('product'));
+        return view('market.market-edit', compact('product'));
     }
 
     public function update(Request $request, $id){
@@ -94,12 +94,22 @@ class ProductsController extends Controller
         return view('farmer.farmer-product', compact('product'));
     }
 
+    // public function show($id)
+    // {
+    //     $product=Product::find($id);
+    //     return view('farmer.farmer-product'->with('product', $product));
+    // }
+
+    
+
     public function products_create()
     {
         $product=Product::all();
         return view('farmer.add', compact('product'));
     }
 
+
+    //
     public function products_store(Request $request){
 
         
@@ -112,6 +122,7 @@ class ProductsController extends Controller
         // ]);
         $product= new Product;
         $product->name= $request->input('name');
+        $product->weight= $request->input('weight');
         $product->price= $request->input('price');
 
         if($request->hasfile('image')){
