@@ -23,8 +23,8 @@
 	<aside class="col-md-3">
 		<ul class="list-group">
 			<a class="list-group-item active" href="#"> Account Overview  </a>
-			<a class="list-group-item" href="{{ url('profile-edit/'.Auth::user()->id) }}"> Edit Profile </a>
-			<a class="list-group-item" href="{{url('farmer-add')}}"> Add Products </a>
+			<a class="list-group-item" href="{{ url('market-edit/'.Auth::user()->id) }}"> Edit Profile </a>
+			
 			<a class="list-group-item" href="#"> View Products </a>
 		</ul>
 	</aside> <!-- col.// -->

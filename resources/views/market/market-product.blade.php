@@ -84,8 +84,8 @@
                 <a class="btn-overlay" href="#"><i class="fa fa-search-plus"></i> Quick view</a>
             </div> <!-- img-wrap.// -->
             <figcaption class="info-wrap">
-                <div class="fix-height">
-                    <a href="#" class="title">Name:{{$item->name}}</a>
+                <div class="text-wrap">
+                    <a href="#" class="title"><strong>Name: {{$item->name}}</strong></a>
                     <div class="price-wrap mt-2">
                         <span class="price">Price: Ksh. {{$item->price}}</span><br>
                         <span class="price">Weight: {{$item->weight}} Kgs</span>

@@ -126,6 +126,7 @@ class AdminController extends Controller
         $admin= new Product;
         $admin->name= $request->input('name');
         $admin->weight= $request->input('weight');
+        $admin->region= $request->input('region');
         $admin->price= $request->input('price');
 
         if($request->hasfile('image')){

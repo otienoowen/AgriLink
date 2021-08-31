@@ -50,11 +50,6 @@ Route::get('profile-edit/{id}', 'ProductsController@edit');
 Route::get('farmer-add', 'ProductsController@products_create');
 Route::post('farmer-add', 'ProductsController@products_store');
 
-
-//Route::get('farmer-edit/{id}', 'ProductsController@products_edit');
-//Route::get('edit-product/{id}', 'AdminController@products_edit');
-//Route::put('update-product/{id}', 'AdminController@products_update');
-
 //MARKET CRUD
 Route::get('market-profile', 'ProductsController@index2');
 Route::get('market-edit/{id}', 'ProductsController@edit2');
