@@ -5,7 +5,7 @@
 <div class="container">
 
 <div class="intro-banner-wrap">
-	<img src="{{ asset('/banner.png') }}" class="img-fluid rounded">
+	<img src="{{ asset('/banner.jpg') }}" class="img-fluid rounded">
 </div>
 
 </div> <!-- container //  -->
@@ -77,7 +77,7 @@
 	</div> <!-- col.// -->
 	<div class="col-md-3  col-6">
 		<figure class="box item-logo">
-			<a href="https://zucchini.co.ke/"><img src="{{ asset('/logo4.png') }}"></a>
+			<a href="https://zucchini.co.ke/"><img src="{{ asset('/logo4.jpg') }}"></a>
 		</figure> <!-- item-logo.// -->
 	</div> <!-- col.// -->
 </div> <!-- row.// -->
