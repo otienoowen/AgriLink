@@ -66,6 +66,7 @@ Route::get('market-product', 'ProductsController@market_index');
 
 
 
+
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/services', 'PagesController@services');

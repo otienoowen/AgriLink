@@ -88,7 +88,6 @@
                     <a href="#" class="title">Name:{{$item->name}}</a>
                     <div class="price-wrap mt-2">
                         <span class="price">Price: Ksh. {{$item->price}}</span><br>
-						<span class="price">Region: {{$item->region}}</span><br>
                         <span class="price">Weight: {{$item->weight}} Kgs</span>
                     </div> <!-- price-wrap.// -->
                 </div>
